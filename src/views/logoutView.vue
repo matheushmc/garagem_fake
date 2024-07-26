@@ -1,19 +1,34 @@
 <script setup>
-import { onMounted} from 'vue'
+import { onMounted } from 'vue';
+import { PassageUser } from '@passageidentity/passage-elements/passage-user';
 import { useAuthStore } from '@/stores/auth';
-import { useRouter } from 'vue-router'
-const authStore = useAuthStore()
-const router = useRouter()
+
+const authStore = useAuthStore();
+
+const getUserInfo = async () => {
+  try {
+    const authToken = localStorage.getItem('psg_auth_token');
+    const passageUser = new PassageUser(authToken);
+    const user = await passageUser.userInfo(authToken);
+    if (user) {
+      await authStore.setToken(authToken);
+    } else {
+      authStore.unsetToken();
+    }
+  } catch (error) {
+    authStore.unsetToken();
+  }
+};
 
 onMounted(() => {
-  authStore.unsetToken()
-  localStorage.removeItem('psg_auth_token')
-  router.push({ name: 'home' })
-})
+  getUserInfo();
+});
 </script>
 
 <template>
-  <h1>Logging out..</h1>
+  <p>Perfil</p>
+  <div v-if="authStore.loggedIn">
+    <router-link  to="/logout">Logout</router-link> |
+      {{ authStore.user.email }}
+    </div>
 </template>
-
-<style></style>
