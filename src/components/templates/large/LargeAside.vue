@@ -13,19 +13,22 @@ import LogoTitle from '@/components/templates/LogoTitle.vue';
     <div class="divider" />
     <div class="menu">
       <router-link to="/marcas">
-        <i class="icon mdi mdi-car-lifted-pickup"/> Marca
+        <i class="icon mdi mdi-shield-car"/> Marca
       </router-link>
       <router-link to="/categorias">
-        <i class="icon mdi mdi-car-sports"/> Categoria
+        <i class="icon mdi mdi-car-estate"/> Categoria
       </router-link>
       <router-link to="/Cores">
-        <i class="icon mdi mdi-palette"/> Cor
+        <i class="icon mdi mdi-spray"/> Cor
       </router-link>
       <router-link to="/acessorios">
-        <i class="icon mdi mdi-car-seat"/> Acessorios
+        <i class="icon mdi mdi-seat-recline-extra"/> Acessorios
       </router-link>
       <router-link to="/login">
         <i class="icon mdi mdi-account" /> Login
+      </router-link>
+      <router-link to="/logout">
+        <i class="icon mdi mdi-account-circle"/> Perfil
       </router-link>
     </div>
   </div>
@@ -43,7 +46,7 @@ import LogoTitle from '@/components/templates/LogoTitle.vue';
 
 .divider {
   margin-top: 1rem;
-  border-top: 1px solid #eeeeee;
+  border-top: 1px solid #230064;
 }
 
 .menu {
@@ -54,7 +57,7 @@ import LogoTitle from '@/components/templates/LogoTitle.vue';
   display: flex;
   align-items: center;
   text-decoration: none;
-  color: #000000;
+  color: #230064;
   gap: 1rem;
   font-size: 1.3rem;
   margin-top: 2.2rem;
