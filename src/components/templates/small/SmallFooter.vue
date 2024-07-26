@@ -24,12 +24,18 @@ onBeforeRouteUpdate(() => {
       <i class="mdi mdi-home-outline" />
       Home
     </RouterLink>
+    <router-link to="/marcas">
+        <i class="icon mdi mdi-shield-car"/> Marca
+      </router-link>
+      <router-link to="/categorias">
+        <i class="icon mdi mdi-car-estate"/> Categoria
+      </router-link>
     <RouterLink to="/cores">
-      <i/>
+      <i class="icon mdi mdi-spray"/>
       Cor
     </RouterLink>
     <RouterLink to="/acessorios">
-      <i/>
+      <i class="icon mdi mdi-seat-recline-extra"/>
       Acessorios
     </RouterLink>
 
@@ -58,7 +64,7 @@ onBeforeRouteUpdate(() => {
     width: 100%;
     justify-content: space-between;
     text-decoration: none;
-    color: #282828;
+    color: #230064;
     font-size: 1rem;
     transition: color 0.3s;
 }
@@ -77,7 +83,7 @@ onBeforeRouteUpdate(() => {
     flex-direction: column;
     align-items: center;
     text-decoration: none;
-    color: #282828;
+    color: #230064;
     font-size: 1rem;
     transition: color 0.3s;
 }
